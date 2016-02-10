@@ -1,4 +1,4 @@
-﻿shader "CTD/DiffuseSimple"
+﻿shader "CTD/RimShader"
 {
 	Properties
 	{
@@ -13,7 +13,7 @@
 
 	SubShader
 	{
-		Tags{"RenderType" = "Opaque"}
+		Tags{"RenderType" = "Transparent"}
 
 		CGPROGRAM
 		#pragma surface surf Lambert
@@ -35,11 +35,11 @@
 		void surf(Input IN, inout SurfaceOutput o)
 		{
 			IN.color = _ColorTint;
-			o.Albedo = tex2D(_MainTex, IN.uv_MainTex).rgb * IN.color;
+			o.Albedo = tex2D(_MainTex, IN.uv_MainTex).rgba * IN.color;
 			o.Normal = UnpackNormal(tex2D(_BumpMap,IN.uv_BumpMap));
 
-			half rim = 1.0 - saturate(dot(normalize(IN.viewDir), o.Normal));
-			o.Emission = _RimColor.rgb * pow(rim,_RimPower);
+			half rim =  1.0 - saturate(dot(normalize(IN.viewDir), o.Normal));
+			o.Emission = _RimColor.rgba * pow(rim,_RimPower);
 		}
 		ENDCG
 	}

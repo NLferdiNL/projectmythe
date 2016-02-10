@@ -2,7 +2,7 @@
 using System.Collections;
 [RequireComponent(typeof(Rigidbody))]
 public class Planet : MonoBehaviour {
-	[Range(0,100)]
+	[Range(0,200)]
 	[SerializeField, TooltipAttribute("the amount of pull this object has on other objects")]
 	public float standardAcceleration = 10f;
 

@@ -30,12 +30,16 @@ public class PointGravity : MonoBehaviour
 			float distance = Vector3.Distance (planet.transform.position, transform.position);
 			//get the radius of the planet
 			float radius = planet.GetAvgRadius ();
-
 			if (distance <= pullRadius) {
+				if(distance <= radius + .501){
+					grounded = true;
+				}else{
+					grounded = false;
+				}
 				// Calculate the force needed based on the object's distance, gravity and radius
 				// Formula: https://en.wikipedia.org/wiki/Gravity_of_Earth#Altitude
 				float acceleration = planet.standardAcceleration * Mathf.Pow ((radius / (radius + distance)), 2f);
-				if (acceleration > minPull) {
+				if (acceleration > minPull && !grounded) {
 					//apply force to the object
 					rb.AddForce ((planet.transform.position - transform.position).normalized * acceleration);
 				}
