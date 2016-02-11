@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using System.Collections;
 using XInputDotNetPure;
 
@@ -237,3 +237,4 @@ public class Xbox360Wired_InputController : MonoBehaviour {
         return angle;
     }
 }
+*/
