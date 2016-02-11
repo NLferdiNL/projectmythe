@@ -6,7 +6,7 @@ public class Powerup : MonoBehaviour {
     GameObject particleOnDeath;
 
     void OnTriggerEnter(Collider other) {
-        if (other.tag == Tags.player) {
+		if (other.tag == Tags.PLAYER) {
             // Do something.
             // Like give the player his booster upgrade.
 
