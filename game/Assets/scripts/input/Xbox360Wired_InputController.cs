@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
-using XInputDotNetPure;
+//using XInputDotNetPure;
 
 public class Xbox360Wired_InputController : MonoBehaviour {
-	private bool playerIndexSet = false;
+	/*private bool playerIndexSet = false;
 	private PlayerIndex playerIndex;
 	private GamePadState state;
 	private GamePadState prevState;
@@ -235,5 +235,5 @@ public class Xbox360Wired_InputController : MonoBehaviour {
         float angle = (Mathf.Atan2(X, Y) * Mathf.Rad2Deg);
         //Debug.Log(angle);
         return angle;
-    }
+    }*/
 }
