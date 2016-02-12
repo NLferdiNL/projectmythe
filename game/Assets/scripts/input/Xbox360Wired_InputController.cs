@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using System.Collections;
 //using XInputDotNetPure;
 
@@ -19,14 +19,14 @@ public class Xbox360Wired_InputController : MonoBehaviour {
     [SerializeField]private float triggerPressedSensitivity;
 
     //for reading
-    public float leftStickAngle;
-    public float rightStickAngle;
-    public bool rightStickActive;
-    public bool leftStickActive;
-    public float leftStickX;
-    public float leftStickY;
-    public float rightStickX;
-    public float rightStickY;
+    public float LeftStickAngle;
+    public float RightStickAngle;
+    public bool RightStickActive;
+    public bool LeftStickActive;
+    public float LeftStickX;
+    public float LeftStickY;
+    public float RightStickX;
+    public float RightStickY;
 
     public bool GUION;
 
@@ -45,8 +45,8 @@ public class Xbox360Wired_InputController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		weaponController = player.GetComponent<WeaponController>();
-		leftStickButton = false;// NO WARNING TOLERANCE!!!!! so il just "use" it here
+		camera = GameObject.FindGameObjectWithTag (Tags.MAIN_CAMERA);
+		player = GameObject.FindGameObjectWithTag (Tags.PLAYER);
 	}
 	
 	// Update is called once per frame
@@ -59,25 +59,25 @@ public class Xbox360Wired_InputController : MonoBehaviour {
 
         if (DeadZoneCheckRight())
         {
-            rightStickX = state.ThumbSticks.Right.X;//holds x value of stick
-            rightStickY = state.ThumbSticks.Right.Y;//holds y value of stick
-            rightStickAngle = CalculateRotation(state.ThumbSticks.Right.X, state.ThumbSticks.Right.Y); // calculates a angle for the right stick
+            RightStickX = state.ThumbSticks.Right.X;//holds x value of stick
+            RightStickY = state.ThumbSticks.Right.Y;//holds y value of stick
+            RightStickAngle = CalculateRotation(state.ThumbSticks.Right.X, state.ThumbSticks.Right.Y); // calculates a angle for the right stick
         }
         else
         {
-            rightStickX = 0f; // set it back to 0 if inside the deadzone
-            rightStickY = 0f; // set it back to 0 if inside the deadzone
+            RightStickX = 0f; // set it back to 0 if inside the deadzone
+            RightStickY = 0f; // set it back to 0 if inside the deadzone
         }
         if (DeadZoneCheckLeft())
         {
-            leftStickX = state.ThumbSticks.Left.X;//holds x value of stick
-            leftStickY = state.ThumbSticks.Left.Y;//holds y value of stick
-            leftStickAngle = CalculateRotation(state.ThumbSticks.Left.X, state.ThumbSticks.Left.Y);   // calculates a angle for the left stick
+            LeftStickX = state.ThumbSticks.Left.X;//holds x value of stick
+            LeftStickY = state.ThumbSticks.Left.Y;//holds y value of stick
+            LeftStickAngle = CalculateRotation(state.ThumbSticks.Left.X, state.ThumbSticks.Left.Y);   // calculates a angle for the left stick
         }
         else
         {
-            leftStickX = 0f; // set it back to 0 if inside the deadzone
-            leftStickY = 0f; // set it back to 0 if inside the deadzone
+            LeftStickX = 0f; // set it back to 0 if inside the deadzone
+            LeftStickY = 0f; // set it back to 0 if inside the deadzone
         }
 
     }
@@ -85,7 +85,7 @@ public class Xbox360Wired_InputController : MonoBehaviour {
     {
 		if (player) {
 			if (leftShoulder == true) {
-
+				
 			}
 			if (rightShoulder == true) {
 
@@ -237,3 +237,4 @@ public class Xbox360Wired_InputController : MonoBehaviour {
         return angle;
     }*/
 }
+*/

@@ -14,19 +14,19 @@ public class playermovement : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision other) {
-        if (other.gameObject.tag == Tags.ground) {
+        if (other.gameObject.tag == Tags.GROUND) {
             touchingGround = true;
         }
     }
 
     void OnCollisionStay(Collision other) {
-        if (other.gameObject.tag == Tags.ground) {
+        if (other.gameObject.tag == Tags.GROUND) {
             touchingGround = true;
         }
     }
 
     void OnCollisionExit(Collision other) {
-        if (other.gameObject.tag == Tags.ground) {
+        if (other.gameObject.tag == Tags.GROUND) {
             touchingGround = false;
         }
     }
