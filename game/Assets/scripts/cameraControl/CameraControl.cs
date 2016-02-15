@@ -8,12 +8,12 @@ public class CameraControl : MonoBehaviour {
 
 	public Transform lookAt;
 	public Transform camTransform;
-
-	[SerializeField]private bool flying = false;
+	public bool Ground = false;
+	public bool Flying = false;
 
 	private Camera cam;
 
-	private float distance = 10.0f;
+	private float distance = 5.0f;
 	private float currentX = 0.0f;
 	private float currentY = 0.0f;
 	private float sensitivityX = 4.0f;
@@ -32,12 +32,24 @@ public class CameraControl : MonoBehaviour {
 	}
 
 	private void LateUpdate(){
+		Normal ();
+		InFlight ();
+	}
+
+	private void Normal(){
+		if(Ground == true){
 		Vector3 dir = new Vector3 (0, 0, -distance);
-		if (flying == true) {
-			dir = new Vector3 (0, 0, -20);
-		}
 		Quaternion rotation = Quaternion.Euler (currentY, currentX, 0);
 		camTransform.position = lookAt.position + rotation * dir;
 		camTransform.LookAt (lookAt.position);
+		}
+	}
+	private void InFlight(){
+		if (Flying == true) {
+			Vector3 dir = new Vector3 (0, 0, -15);
+			Quaternion rotation = Quaternion.Euler (currentY, currentX, 0);
+			camTransform.position = lookAt.position + rotation * dir;
+			camTransform.LookAt (lookAt.position);
+		}
 	}
 }

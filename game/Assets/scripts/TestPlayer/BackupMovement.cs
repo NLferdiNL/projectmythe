@@ -14,6 +14,8 @@ public class BackupMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		jumpTime = 0;
+		GetComponent<CameraControl> ().Ground;
+		GetComponent<CameraControl> ().Flying;
 	}
 	
 	// Update is called once per frame
@@ -21,6 +23,15 @@ public class BackupMovement : MonoBehaviour {
 		P1Moving ();
 		P1Rotate ();
 	}
+	void OnTriggerEnter(Collider col){
+		if (col.gameObject.tag == "Grounded") {
+			Ground = true;
+		}
+		if (col.gameObject.tag == "Flight") {
+			Flying = true;
+		}
+	}
+
 	void OnCollisionEnter(Collision col)
 	{
 		if (col.gameObject.tag == "Ground") 
