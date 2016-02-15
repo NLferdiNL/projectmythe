@@ -9,14 +9,14 @@ public class TextFieldIngame: MonoBehaviour {
 
 	void OnTriggerEnter(Collider col)
 	{
-		if (col.transform.name == "Player1 || col.transform.name == "Player2") {
+		if (col.transform.name == "Player" ) {
 			display = true;
 		}
 	}
 
 	void OnTriggerExit(Collider col)
 	{
-		if (col.transform.name == "Player1" || col.transform.name == "Player2") 
+		if (col.transform.name == "Player") 
 		{
 			display = false;
 		}

@@ -7,7 +7,7 @@ public class BackupMovement : MonoBehaviour {
 
 	[SerializeField]private float Speed = 4;
 	[SerializeField]private float rotateSpeed;
-	[SerializeField]private bool Player1;
+	[SerializeField]private bool Player;
 	[SerializeField]private float jumpHeight;
 	[SerializeField]private int jumpTime;
 	[SerializeField]private int maxJumpTime;
@@ -30,7 +30,7 @@ public class BackupMovement : MonoBehaviour {
 	}
 
 	public void P1Rotate()
-	{if (Player1 == true) {
+	{if (Player == true) {
 			//Rotates the player on the Y Axis
 			if (Input.GetKey (KeyCode.Q)) {        //Rotates Left
 				transform.Rotate (-Vector3.up * Time.deltaTime * rotateSpeed);
@@ -41,7 +41,7 @@ public class BackupMovement : MonoBehaviour {
 		}
 	}
 	void P1Moving()
-	{if (Player1 == true) {
+	{if (Player == true) {
 			if (Input.GetKey (KeyCode.W)) {                 //Walk Forward
 				transform.Translate (Vector3.forward * Time.deltaTime * Speed);
 			}
