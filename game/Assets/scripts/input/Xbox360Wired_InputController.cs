@@ -1,16 +1,16 @@
-﻿/*using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
-//using XInputDotNetPure;
+using XInputDotNetPure;
 
 public class Xbox360Wired_InputController : MonoBehaviour {
-	/*private bool playerIndexSet = false;
+	private bool playerIndexSet = false;
 	private PlayerIndex playerIndex;
 	private GamePadState state;
 	private GamePadState prevState;
 
 	//Objects to Affect
 	[SerializeField]private GameObject player;
-	[SerializeField]private GameObject camera;
+	[SerializeField]private GameObject cam;
 
 	//Project Specific (add vars for storing classes here)
 
@@ -45,7 +45,7 @@ public class Xbox360Wired_InputController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		camera = GameObject.FindGameObjectWithTag (Tags.MAIN_CAMERA);
+		cam = GameObject.FindGameObjectWithTag (Tags.MAIN_CAMERA);
 		player = GameObject.FindGameObjectWithTag (Tags.PLAYER);
 	}
 	
@@ -235,6 +235,5 @@ public class Xbox360Wired_InputController : MonoBehaviour {
         float angle = (Mathf.Atan2(X, Y) * Mathf.Rad2Deg);
         //Debug.Log(angle);
         return angle;
-    }*/
+    }
 }
-*/
