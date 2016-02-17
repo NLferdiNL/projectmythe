@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class playermovement : MonoBehaviour {
+public class playermovement : MonoBehaviour 
+{
     // This script is only for testing the powerups.
     // Will be removed once a proper movement comes up.
     [SerializeField]
@@ -14,24 +15,30 @@ public class playermovement : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision other) {
-        if (other.gameObject.tag == Tags.GROUND) {
+        if (other.gameObject.tag == Tags.GROUND) 
+		{
             touchingGround = true;
         }
     }
 
-    void OnCollisionStay(Collision other) {
-        if (other.gameObject.tag == Tags.GROUND) {
+    void OnCollisionStay(Collision other) 
+	{
+        if (other.gameObject.tag == Tags.GROUND) 
+		{
             touchingGround = true;
         }
     }
 
-    void OnCollisionExit(Collision other) {
-        if (other.gameObject.tag == Tags.GROUND) {
+    void OnCollisionExit(Collision other) 
+	{
+        if (other.gameObject.tag == Tags.GROUND) 
+		{
             touchingGround = false;
         }
     }
 
-    public void Move(bool forward, bool backward, bool left, bool right, bool jump) {
+    public void Move(bool forward, bool backward, bool left, bool right, bool jump) 
+	{
         if (forward) {
             transform.position += transform.forward / 10;
         } else if (backward) {
