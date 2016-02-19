@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-//Victor van den Brink
+
 public class CameraControl : MonoBehaviour {
 
 	private const float Y_ANGLE_MIN = 10.0f;
