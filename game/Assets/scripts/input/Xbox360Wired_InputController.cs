@@ -10,7 +10,7 @@ public class Xbox360Wired_InputController : MonoBehaviour {
 
 	//Objects to Affect
 	[SerializeField]private GameObject player;
-	[SerializeField]private GameObject camera;
+	[SerializeField]private GameObject cam;
 
 	//Project Specific (add vars for storing classes here)
 
@@ -45,7 +45,7 @@ public class Xbox360Wired_InputController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		camera = GameObject.FindGameObjectWithTag (Tags.MAIN_CAMERA);
+		cam = GameObject.FindGameObjectWithTag (Tags.MAIN_CAMERA);
 		player = GameObject.FindGameObjectWithTag (Tags.PLAYER);
 	}
 	

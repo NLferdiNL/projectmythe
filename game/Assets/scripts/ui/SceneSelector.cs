@@ -8,6 +8,6 @@ public class SceneSelector : MonoBehaviour
 
 	public void ChangeLevel()
 	{
-		Application.LoadLevel (loadLevel);
+		SceneManager.LoadScene(loadLevel);
 	}
 }

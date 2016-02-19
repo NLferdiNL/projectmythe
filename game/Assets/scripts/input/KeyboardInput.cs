@@ -2,12 +2,11 @@
 using System.Collections;
 
 public class KeyboardInput : MonoBehaviour {
+    [SerializeField]
+    PlayerMovement playerMovement;
 
     [SerializeField]
-    bool forward, right, backward, left, jump = false;
-
-    [SerializeField]
-    playermovement playermove;
+    bool forward, right, backward, left, jump, glide = false;
 
 	void Update () {
         CheckKeys();
@@ -20,7 +19,8 @@ public class KeyboardInput : MonoBehaviour {
         left = Input.GetKey(KeyCode.A);
         right = Input.GetKey(KeyCode.D);
 
-        jump = Input.GetKey(KeyCode.Space);
+        jump = Input.GetKeyDown(KeyCode.Space);
+        glide = Input.GetKey(KeyCode.Space);
 
         if (left && right) {
             left = right = false;
@@ -30,7 +30,7 @@ public class KeyboardInput : MonoBehaviour {
             forward = backward = false;
         }
 
-        playermove.Move(forward, backward, left, right, jump);
+        playerMovement.Move(forward, backward, left, right, jump, glide);
     }
 
     void CheckKeysDown() {
